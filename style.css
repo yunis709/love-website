@@ -14,7 +14,7 @@ body {
   overflow: hidden;
 }
 
-/* الحاوية */
+/* الحاوية الرئيسية */
 .slider {
   position: relative;
   height: 100vh;
@@ -33,19 +33,20 @@ body {
   padding: 30px;
   opacity: 0;
   transition: opacity 0.8s ease;
-  pointer-events: none; /* 🔥 هذا هو الحل */
+  pointer-events: none; /* ⭐ يسمح للأزرار بالضغط */
 }
 
 .slide.active {
   opacity: 1;
 }
 
-/* النص */
+/* العناوين */
 h1 {
   font-size: 2.8rem;
   margin-bottom: 20px;
 }
 
+/* النص */
 p {
   font-size: 1.6rem;
   line-height: 1.9;
@@ -60,11 +61,12 @@ p {
   display: flex;
   justify-content: space-between;
   padding: 0 40px;
-  z-index: 9999; /* 🔥 مهم جدًا */
+  z-index: 9999; /* ⭐ يرفع الأزرار فوق الشرائح */
 }
 
+/* شكل الأزرار */
 .controls button {
-  background: rgba(255,255,255,0.18);
+  background: rgba(255, 255, 255, 0.18);
   border: none;
   color: white;
   font-size: 2rem;
@@ -74,6 +76,7 @@ p {
   backdrop-filter: blur(10px);
 }
 
+/* تأثير الضغط */
 .controls button:active {
   transform: scale(0.95);
 }
