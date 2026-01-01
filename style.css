@@ -14,12 +14,14 @@ body {
   overflow: hidden;
 }
 
+/* الحاوية */
 .slider {
+  position: relative;
   height: 100vh;
   width: 100%;
-  position: relative;
 }
 
+/* الشرائح */
 .slide {
   position: absolute;
   inset: 0;
@@ -31,12 +33,14 @@ body {
   padding: 30px;
   opacity: 0;
   transition: opacity 0.8s ease;
+  pointer-events: none; /* 🔥 هذا هو الحل */
 }
 
 .slide.active {
   opacity: 1;
 }
 
+/* النص */
 h1 {
   font-size: 2.8rem;
   margin-bottom: 20px;
@@ -48,6 +52,7 @@ p {
   max-width: 700px;
 }
 
+/* أزرار التنقل */
 .controls {
   position: fixed;
   bottom: 30px;
@@ -55,14 +60,15 @@ p {
   display: flex;
   justify-content: space-between;
   padding: 0 40px;
+  z-index: 9999; /* 🔥 مهم جدًا */
 }
 
 .controls button {
-  background: rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.18);
   border: none;
   color: white;
   font-size: 2rem;
-  padding: 10px 25px;
+  padding: 12px 28px;
   border-radius: 50px;
   cursor: pointer;
   backdrop-filter: blur(10px);
@@ -70,79 +76,4 @@ p {
 
 .controls button:active {
   transform: scale(0.95);
-}  }
-}
-
-.intro-title {
-  font-size: 3em;
-  color: gold;
-  margin-bottom: 25px;
-}
-
-button {
-  padding: 12px 30px;
-  border: none;
-  border-radius: 30px;
-  background: linear-gradient(45deg, gold, #caa300);
-  color: black;
-  font-size: 1em;
-  cursor: pointer;
-}
-
-p {
-  font-size: 1.5em;
-  line-height: 2;
-  max-width: 720px;
-}
-
-.final p {
-  color: gold;
-  font-size: 1.6em;
-}
-
-.signature {
-  margin-top: 20px;
-  display: block;
-  opacity: 0.7;
-}
-
-#music-btn {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  background: gold;
-  border: none;
-  cursor: pointer;
-}
-
-#nav-dots {
-  position: fixed;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.dot {
-  width: 10px;
-  height: 10px;
-  background: #555;
-  border-radius: 50%;
-  margin: 12px 0;
-}
-
-.dot.active {
-  background: gold;
-}
-
-@media (max-width: 768px) {
-  .intro-title {
-    font-size: 2em;
-  }
-
-  p {
-    font-size: 1.1em;
-  }
 }
