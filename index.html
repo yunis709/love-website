@@ -1,40 +1,80 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>إلى حبيبتي ندى</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<button id="music-btn">🎵</button>
-<audio id="bg-music" loop>
+<audio id="bgMusic" autoplay loop>
   <source src="music.mp3" type="audio/mpeg">
 </audio>
 
-<section class="section active" id="intro">
-  <div>
-    <h1 class="intro-title">إلى حبيبتي ندى</h1>
-    <button onclick="nextSection()">ابدئي الحكاية</button>
-  </div>
-</section>
+<div class="slider">
 
-<section class="section">
-  <p>
-    انتهت سنة، ومع آخر أيامها  
-    عرفت إن بعض القلوب ما تكون ذكرى  
-    تكون وطن
-  </p>
-</section>
+  <section class="slide active">
+    <h1>إلى حبيبتي ندى 🤍</h1>
+    <p>
+      سنة تمشي، وسنة تجي  
+      وأنتِ ثابتة في قلبي  
+      ما تغيّرك الأيام  
+      ولا يبدّلك الزمن
+    </p>
+  </section>
 
-<section class="section">
-  <p>
-    كنتِ الأمان في فوضاي  
-    والصوت اللي يطمني  
-    وقلبي ما عرف غيرك
-  </p>
-</section>
+  <section class="slide">
+    <h1>نهاية سنة</h1>
+    <p>
+      سنة كانت ثقيلة  
+      ضحكنا فيها  
+      تعبنا فيها  
+      بس وجودك كان أخف من كل شيء
+    </p>
+  </section>
+
+  <section class="slide">
+    <h1>بداية سنة جديدة ✨</h1>
+    <p>
+      سنة جديدة  
+      وأنا أختارك من جديد  
+      بنفس الحب  
+      وبقلب أكبر  
+      وبوعد ما يتغيّر
+    </p>
+  </section>
+
+  <section class="slide">
+    <h1>الوعد</h1>
+    <p>
+      إنك تكوني  
+      أوّل فرح  
+      وآخر دعاء  
+      وكل الطريق بينهما
+    </p>
+  </section>
+
+  <section class="slide">
+    <h1>النهاية</h1>
+    <p>
+      مو كل سنة تكون جميلة  
+      لكن وجودك  
+      يخلي أي سنة  
+      تستاهل تُعاش 🤍
+    </p>
+  </section>
+
+</div>
+
+<div class="controls">
+  <button onclick="prevSlide()">⟵</button>
+  <button onclick="nextSlide()">⟶</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html></section>
 
 <section class="section">
   <p>
