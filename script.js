@@ -1,28 +1,31 @@
-const slides = document.querySelectorAll(".slide");
-let current = 0;
+document.addEventListener("DOMContentLoaded", () => {
 
-function showSlide(index) {
-  slides.forEach(slide => slide.classList.remove("active"));
-  slides[index].classList.add("active");
-}
+  const slides = document.querySelectorAll(".slide");
+  const nextBtn = document.getElementById("nextBtn");
+  const prevBtn = document.getElementById("prevBtn");
+  let current = 0;
 
-function nextSlide() {
-  current = (current + 1) % slides.length;
-  showSlide(current);
-}
-
-function prevSlide() {
-  current = (current - 1 + slides.length) % slides.length;
-  showSlide(current);
-}
-
-// تشغيل الموسيقى عند أول تفاعل
-document.addEventListener("click", () => {
-  const music = document.getElementById("bgMusic");
-  music.play();
-}, { once: true });  } else {
-    music.pause();
-    btn.textContent = '🎵';
+  function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove("active"));
+    slides[index].classList.add("active");
   }
-  playing = !playing;
-};
+
+  nextBtn.addEventListener("click", () => {
+    current++;
+    if (current >= slides.length) current = 0;
+    showSlide(current);
+  });
+
+  prevBtn.addEventListener("click", () => {
+    current--;
+    if (current < 0) current = slides.length - 1;
+    showSlide(current);
+  });
+
+  // تشغيل الموسيقى عند أول تفاعل
+  const music = document.getElementById("bgMusic");
+  document.body.addEventListener("click", () => {
+    music.play();
+  }, { once: true });
+
+});
