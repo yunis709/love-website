@@ -8,16 +8,18 @@
 </head>
 <body>
 
-<audio id="bgMusic" autoplay loop>
+<!-- 🎵 الموسيقى -->
+<audio id="bgMusic" loop>
   <source src="music.mp3" type="audio/mpeg">
 </audio>
 
+<!-- 📦 الشرائح -->
 <div class="slider">
 
   <section class="slide active">
     <h1>إلى حبيبتي ندى 🤍</h1>
     <p>
-      سنة تمشي، وسنة تجي  
+      سنة تمشي وسنة تجي  
       وأنتِ ثابتة في قلبي  
       ما تغيّرك الأيام  
       ولا يبدّلك الزمن
@@ -29,12 +31,87 @@
     <p>
       سنة كانت ثقيلة  
       ضحكنا فيها  
-      تعبنا فيها  
-      بس وجودك كان أخف من كل شيء
+      وتعبنا فيها  
+      لكن وجودك  
+      كان الأجمل دائمًا
     </p>
   </section>
 
   <section class="slide">
+    <h1>بداية سنة جديدة ✨</h1>
+    <p>
+      سنة جديدة  
+      وأنا أختارك من جديد  
+      بنفس الحب  
+      وبقلب أكبر  
+      وبوعد ما يتغيّر
+    </p>
+  </section>
+
+  <section class="slide">
+    <h1>الوعد</h1>
+    <p>
+      أكون معك  
+      في الفرح  
+      وفي التعب  
+      وفي كل تفاصيل الحياة
+    </p>
+  </section>
+
+  <section class="slide">
+    <h1>النهاية</h1>
+    <p>
+      مو كل سنة تكون جميلة  
+      لكن وجودك  
+      يخلي أي سنة  
+      تستاهل تُعاش 🤍
+    </p>
+  </section>
+
+</div>
+
+<!-- 🔘 أزرار التنقل -->
+<div class="controls">
+  <button id="prevBtn">⟵</button>
+  <button id="nextBtn">⟶</button>
+</div>
+
+<!-- ⚙️ الجافاسكربت -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const slides = document.querySelectorAll(".slide");
+  const nextBtn = document.getElementById("nextBtn");
+  const prevBtn = document.getElementById("prevBtn");
+  const music = document.getElementById("bgMusic");
+
+  let current = 0;
+
+  function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove("active"));
+    slides[index].classList.add("active");
+  }
+
+  nextBtn.addEventListener("click", () => {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  });
+
+  prevBtn.addEventListener("click", () => {
+    current = (current - 1 + slides.length) % slides.length;
+    showSlide(current);
+  });
+
+  // تشغيل الموسيقى عند أول تفاعل (حل إجباري للمتصفحات)
+  document.body.addEventListener("click", () => {
+    music.play();
+  }, { once: true });
+
+});
+</script>
+
+</body>
+</html>  <section class="slide">
     <h1>بداية سنة جديدة ✨</h1>
     <p>
       سنة جديدة  
